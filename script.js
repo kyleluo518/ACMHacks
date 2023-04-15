@@ -19,17 +19,9 @@ userInterface.on("line", async input => {
         model: "gpt-3.5-turbo",
         messages: [{role: "user", content: input}],
     })
-    console.log(res.data.choices[0].message.content)
+    return res.data.choices[0].message.content
     userInterface.prompt()
     //.then(res =>{
     //    console.log(res.data.choices[0].message.content)
     //}) 
 })
-
-let biasform = document.getElementById("main");
-biasform.addEventListener("submit", () => {
-    let bias = document.getElementById("bias");
-    if (bias.value == "feminist") {
-        alert("Hello")
-    }
-});

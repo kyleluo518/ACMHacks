@@ -1,21 +1,23 @@
+
 .head {
+    background-color: #301014;
     text-align: center;
 }
 
 .navbar {
     display: flex;
-    background-color: #333;
+    background-color: #301014;
     font-family: Arial, sans-serif;
   }
   
   .navbar a {
     padding: 15px;
-    color: #fff;
+    color: #edf4ed;
     text-decoration: none;
   }
   
   .navbar a:hover {
-    background-color: #555;
+    background-color: #51291e;
   }
 navbar {
     list-style-type: none;
