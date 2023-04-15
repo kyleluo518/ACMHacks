@@ -26,3 +26,9 @@ userInterface.on("line", async input => {
     //}) 
 })
 
+function Pretend(role) {
+    const elem = document.getElementById("paragraph");
+    let out = "Pretend to be"
+    out.concat(out, role)
+    return out;
+  }
