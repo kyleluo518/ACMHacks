@@ -30,5 +30,6 @@ function Pretend(role) {
     const elem = document.getElementById("paragraph");
     let out = "Pretend to be"
     out.concat(out, role)
+    console.log(out);
     return out;
   }
