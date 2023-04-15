@@ -26,3 +26,10 @@ userInterface.on("line", async input => {
     //}) 
 })
 
+let biasform = document.getElementById("main");
+biasform.addEventListener("submit", () => {
+    let bias = document.getElementById("bias");
+    if (bias.value == "feminist") {
+        alert("Hello")
+    }
+});

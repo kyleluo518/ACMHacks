@@ -3,6 +3,7 @@
 <head>
 	<title>MindMatch</title>
 	<link rel="stylesheet" href="/static/style.css">
+	<link rel="script" href="script.js">
 </head>
 <body>
 	<header>
@@ -17,22 +18,13 @@
 
 	<main>
 		<h2>Samples you can talk to:</h2>
-		<ul>
-            <button onclick="Pretend('Feminist');">Chat with a feminist</button>
-        </ul>
+		<form id="main">
+			<input id="bias" type="text"name="bias" value="feminist">
+		</form>
 	</main>
 
 	<footer>
 		<p>&copy; 2023 MindMatch. All rights reserved.</p>
 	</footer>
-	<script>
-		function Pretend(role) {
-			console.log(123);
-    		//let out = "Pretend to be"
-    		//out.concat(out, role)
-    		//console.log(out);
-    		//document.getElementById("convo").innerHTML = out;
-  		}
-	</script>
 </body>
 </html>
