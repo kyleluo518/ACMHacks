@@ -31,5 +31,5 @@ function Pretend(role) {
     let out = "Pretend to be"
     out.concat(out, role)
     console.log(out);
-    return out;
+    document.getElementById("demo").innerHTML = out;
   }

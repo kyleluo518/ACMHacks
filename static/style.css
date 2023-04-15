@@ -1,4 +1,18 @@
-
+.navbar {
+    display: flex;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar a {
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #555;
+  }
 navbar {
     list-style-type: none;
     margin: 0;
@@ -7,5 +21,4 @@ navbar {
 
 p {
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
 }
