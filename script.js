@@ -27,9 +27,8 @@ userInterface.on("line", async input => {
 })
 
 function Pretend(role) {
-    const elem = document.getElementById("paragraph");
     let out = "Pretend to be"
     out.concat(out, role)
     console.log(out);
-    document.getElementById("demo").innerHTML = out;
+    document.getElementById("convo").innerHTML = out;
   }
