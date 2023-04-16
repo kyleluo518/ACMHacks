@@ -20,8 +20,12 @@
 		<form method="POST" action="/chat">
 			{% csrf_token %}
 			<label>Type of bias:</label>
-			<input type="text" name="bias">
-			<input type="submit" value="Submit">
+			<button type="submit" name="bias" value="feminist">feminist</button>
+			<button type="submit" name="bias" value="flat-earther">flat-earther</button>
+			<button type="submit" name="bias" value="anti-vaxxer">anti-vaccination</button>
+			<button type="submit" name="bias" value="climate change denier">climate change denial</button>
+			<button type="submit" name="bias" value="pro-anorexist">pro-anorexia</button>
+			<button type="submit" name="bias" value="someone who is pro-cannabis">pro-cannabis</button>
 		</form>
 	</main>
 

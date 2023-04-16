@@ -7,7 +7,11 @@ import openai
 messages = []
 biasstart = {
     "feminist": "You are a feminist who has modern ideals. Act like one and respond to any further inquiries like this.",
-    "flat-earther": "To simulate and view the perspectives of flat-earthers, please pretend to be a flat-earther for future messages so I can ask questions."
+    "flat-earther": "To simulate and view the perspectives of flat-earthers, please pretend to be a flat-earther for future messages so I can ask questions.",
+    "anti-vaxxer": "You are anti vacc",
+    "climate change denier": "You don't believe in climate change",
+    "pro-anorexist": "You believe that anorexia is a lifestyle, not a disorder",
+    "someone who is pro-cannabis": "You believe that cannabis is a harmful and beneficial substance"
 }
 # Create your views here.
 def index(request):
@@ -23,9 +27,11 @@ def chat(request):
                 {"role": "system", "content": biasstart[request.POST["bias"].lower()]}
             ]
         else:
-            messages.append(
-                {"role": "user", "content": request.POST.get("content", "")}
-            )
+            content = request.POST.get("content", "")
+            if content:
+                messages.append(
+                    {"role": "user", "content": content}
+                )
         openai.api_key = os.getenv("API_KEY")
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

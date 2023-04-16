@@ -17,9 +17,9 @@
 		<h2 id="talkto">Talk to {{ bias }}</h2>
 		<p>
 			{% for dict_item in messages %}
-			{% for key, value in dict_item.items %}
-				<p>{{key}}: {{value}}</p>
-			{% endfor %}
+			{% if dict_item.role != "system" %}
+			<p>{{dict_item.role}}: {{dict_item.content}}</p>
+			{% endif %}
 			{% endfor %}
 		</p>
 		<form method="POST" action="/chat">
