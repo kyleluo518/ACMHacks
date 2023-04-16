@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-            "src": "django_app_name/wsgi.py",
+            "src": "MindMatch/wsgi.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "django_app_name/wsgi.py"
+            "dest": "MindMatch/wsgi.py"
         }
     ]
 }
