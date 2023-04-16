@@ -2,8 +2,11 @@
 .head {
     background-color: #301014;
     text-align: center;
+    color: #edf4ed;
 }
-
+.h2 {
+  color: #301014
+}
 .navbar {
     display: flex;
     background-color: #301014;
