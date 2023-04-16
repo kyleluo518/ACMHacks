@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MindMatch</title>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<header>
+		<h1><img src=”https://imgur.com/1HJ709P”></h1>
+		<nav class="navbar">
+			<a href="index.html">Home</a> |
+			<a href="about.html">About</a>
+		</nav>
+	</header>
+
+	<main>
+		<h2 id="talkto">Talk to {{ bias }}</h2>
+		<p>
+			{% for msg in messages %}
+				Author: {{ msg[role] }}
+				Message: {{ msg[content] }}
+			{% endfor %}
+		</p>
+		<input type="hidden" name="bias" value="{{ bias }}">
+		<input id="inchat" name="content">
+		<button id="submitkey">Go</button>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 MindMatch. All rights reserved.</p>
+	</footer>
+</body>
+</html>
