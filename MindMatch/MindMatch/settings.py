@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.vercel.app',
+    'mindmatch.vercel.app',
     '127.0.0.1'
     ]
 
