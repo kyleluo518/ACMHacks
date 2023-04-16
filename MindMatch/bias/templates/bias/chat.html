@@ -1,36 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>MindMatch</title>
-	<link rel="stylesheet" href="static/style.css">
-</head>
-<body>
-	<header>
-		<h1><img src=”https://imgur.com/1HJ709P”></h1>
-		<nav class="navbar">
-			<a href="/">Home</a> |
-			<a href="/about">About</a>
-		</nav>
-	</header>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <title>MindMatch</title>
+
+    <!-- Meta tags for SEO and social sharing -->
+   <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+    <meta
+      name="description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Hello World!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
+    <meta
+      property="og:description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+      This is the body of the page
+      Look at the elements and see how they appear in the rendered page on the right
+      Each element is defined using tags, with < and > indicating where each one opens and closes
+      There are elements for sections of the page, images, text, and more
+      The elements include attributes referenced in the CSS for the page style
+    -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#51291E;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">MindMatch</a>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarRightAlignExample"
+          aria-controls="navbarRightAlignExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item-index">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item-aboutus">
+              <a class="nav-link" href="about">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 	<main>
-		<h2 id="talkto">Talk to {{ bias }}</h2>
-		<p>
-			{% for dict_item in messages %}
-			{% if dict_item.role != "system" %}
-			<p>{{dict_item.role}}: {{dict_item.content}}</p>
-			{% endif %}
-			{% endfor %}
-		</p>
-		<form method="POST" action="/chat">
-			<input type="hidden" name="bias" value="{{ bias }}">
-			<input id="inchat" name="content">
-			<input type="submit">
-		</form>
+		<div class="container">
+			<h2 id="talkto">Talk to {{ bias }}</h2>
+			<p>
+				{% for dict_item in messages %}
+				{% if dict_item.role != "system" %}
+				<p>{{dict_item.role}}: {{dict_item.content}}</p>
+				{% endif %}
+				{% endfor %}
+			</p>
+			<form method="POST" action="/chat">
+				<input type="hidden" name="bias" value="{{ bias }}">
+				<input id="inchat" name="content">
+				<input type="submit">
+			</form>
+		</div>
 	</main>
 
-	<footer>
-		<p>&copy; 2023 MindMatch. All rights reserved.</p>
+	<footer style="position: absolute; bottom: 0; right: 0;">
+		<div class="pr-5">
+			<p>&copy; 2023 MindMatch. All rights reserved.</p>
+		</div>
 	</footer>
 </body>
 </html>

@@ -1,38 +1,4 @@
 
-.head {
-    background-color: #301014;
-    text-align: center;
-    color: #edf4ed;
-}
-
-.h2 {
-  color: #301014
-}
-.navbar {
-    display: flex;
-    background-color: #301014;
-    font-family: Arial, sans-serif;
-  }
-  
-  .navbar a {
-    transform: right;
-    padding: 15px;
-    color: #edf4ed;
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    background-color: #51291e;
-  }
-navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-p {
-    font-size: 20px;
-}
 :root {
   --color-bg: #EDF4ED;
   --color-text-main: #51291E;
@@ -440,4 +406,8 @@ td {
   margin-top: 10px;
   margin-left: 30px;
   margin-right: 30px; 
+}
+
+.specialimg {
+  width: 50px;
 }

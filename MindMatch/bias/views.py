@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import openai
 
-messages = []
+messages = {}
 biasstart = {
     "feminist": "You are a feminist who has modern ideals. Act like one and respond to any further inquiries like this.",
     "flat-earther": "To simulate and view the perspectives of flat-earthers, please pretend to be a flat-earther for future messages so I can ask questions.",
@@ -22,23 +22,24 @@ def chat(request):
     global messages
     print("proc")
     if request.method == "POST":
-        if not messages:
-            messages = [
-                {"role": "system", "content": biasstart[request.POST["bias"].lower()]}
+        bias = request.POST["bias"].lower()
+        if not bias in messages:
+            messages[bias] = [
+                {"role": "system", "content": biasstart[bias]}
             ]
         else:
             content = request.POST.get("content", "")
             if content:
-                messages.append(
+                messages[bias].append(
                     {"role": "user", "content": content}
                 )
         openai.api_key = os.getenv("API_KEY")
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            messages=messages
+            messages=messages[bias]
         )
-        messages.append(dict(response["choices"][0]["message"]))
-        context = {"bias": request.POST["bias"], "messages": messages}
+        messages[bias].append(dict(response["choices"][0]["message"]))
+        context = {"bias": request.POST["bias"], "messages": messages[bias]}
         print(context)
         print()
         print(messages)
