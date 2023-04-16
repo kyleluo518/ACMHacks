@@ -4,6 +4,7 @@
     text-align: center;
     color: #edf4ed;
 }
+
 .h2 {
   color: #301014
 }
@@ -14,6 +15,7 @@
   }
   
   .navbar a {
+    transform: right;
     padding: 15px;
     color: #edf4ed;
     text-decoration: none;
