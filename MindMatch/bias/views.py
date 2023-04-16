@@ -16,6 +16,7 @@ def index(request):
 @csrf_exempt
 def chat(request):
     global messages
+    print("proc")
     if request.method == "POST":
         if not messages:
             messages = [
@@ -23,15 +24,18 @@ def chat(request):
             ]
         else:
             messages.append(
-                {"role": "user", "content": request.POST["content"]}
+                {"role": "user", "content": request.POST.get("content", "")}
             )
         openai.api_key = os.getenv("API_KEY")
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=messages
         )
-        messages.append(response["choices"][0]["message"])
+        messages.append(dict(response["choices"][0]["message"]))
         context = {"bias": request.POST["bias"], "messages": messages}
+        print(context)
+        print()
+        print(messages)
         return render(request, "bias/chat.html", context)
     else:
         return redirect("index")
